@@ -1,20 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 const server = express();
-require("dotenv").config();
 
-const router = require("./routes/town-router");
+server.use(express.json());
+server.use(cors());
 
-
-
-// const port = process.env.PORT || 1234;
-const port = 1234;
-
-server.use("/api/towns", router);
-
-server.get("/", (req, res) => {
-    res.send("<h1>Welll?????</h1>")
+server.listen(8000, () => {
+    console.log("Yay!!!")
 })
 
-server.listen(port, () => {
-    console.log("Your mom!!!!", port);
+server.get("/", (req, res) => {
+    res.send("Ghost towns come to life!")
 })
