@@ -1,0 +1,14 @@
+footer {
+    display:flex;
+    justify-content: flex-start;
+    background: black; 
+    height: 100px;
+    margin-top: 9%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 2%;
+    font-size: 1.5rem;
+}
