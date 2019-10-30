@@ -12,7 +12,7 @@ body {
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    // background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
     height: 100vh
 }
 .user {
@@ -91,6 +91,17 @@ body {
     }
 }
 
+.login-register{
+    display:flex;
+    margin: 0%;
+    #register-btn{
+        margin-right:2px;
+    }
+    #login-btn{
+        margin-left:2px;
+    }
+}
+
 @keyframes NO {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
@@ -139,7 +150,7 @@ body {
 	justify-content: space-evenly;
 	align-items: center;
 	margin:5%;
-	background: #B5651D;
+	// background: #B5651D;
 	border-radius: 50px;
 	// max-width: 100%;
 	.titles{
