@@ -3,17 +3,14 @@ const locRoute = express.Router();
 const Locations = require("./locations-model")
 
 
-locRoute.get("/", (req, res) => {
-    res.send("sanity check!")
-})
 
-locRoute.get("/locations", (req, res) => {
+locRoute.get("/", (req, res) => {
     Locations.get()
         .then(locations => res.status(200).json(locations))
         .catch(err => res.status(500).json(err))
 })
 
-locRoute.get("/locations/:id", (req, res) => {
+locRoute.get("/:id", (req, res) => {
     Locations.getById(req.params.id)
         .then(location => {
             res.status(200).json(location)
@@ -23,7 +20,7 @@ locRoute.get("/locations/:id", (req, res) => {
         })
 })
 
-locRoute.post("/locations", (req, res) => {
+locRoute.post("/", (req, res) => {
     Locations.addLocation(req.body)
         .then(location => res.status(200).json(location))
         .catch(err => res.status(500).json({ message: "town cannot be added at this time"}))

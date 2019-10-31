@@ -9,7 +9,7 @@ const getById = (id) => {
 }
 
 const addLocation = (newPlace) => {
-    return db("locations").insert(newPlace);
+    return db("locations").insert(newPlace, "id");
 }
 
 module.exports = {
