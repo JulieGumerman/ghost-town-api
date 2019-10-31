@@ -5,10 +5,15 @@ const get = () => {
 }
 
 const getById = (id) => {
-    return db("locations").where({id});
+    return db("locations").where({id}).first();
+}
+
+const addLocation = (newPlace) => {
+    return db("locations").insert(newPlace);
 }
 
 module.exports = {
     get, 
-    getById
+    getById,
+    addLocation
 }
