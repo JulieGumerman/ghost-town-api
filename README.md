@@ -1,5 +1,21 @@
 # Ghost Town Api
 
+### Table of Contents
+
+* users
+* location
+
+### Users
+**Register a user**
+Post your request to "/api/register". Id will appear automatically. 
+Shape your user like this: 
+```
+{
+    username: "",
+    password: ""
+}
+```
+
 ### Locations
 **Get Locations**
 This is a basic get request to "/api/locations"
@@ -39,10 +55,10 @@ Items will automatically get an id; shape your post request like this:
 
 ```
   {
-    "location": "Spray",
-    "description": "A tiny town in eastern Oregon",
-    "longitude": "-119.794444",
-    "latitude": "44.833056"
+    location: Spray,
+    description: A tiny town in eastern Oregon,
+    longitude: -119.794444,
+    latitude: 44.833056
   }
 ```
 direct post requests to /api/locations
