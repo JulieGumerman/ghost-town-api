@@ -4,6 +4,11 @@ const get = () => {
     return db("locations")
 }
 
+const getById = (id) => {
+    return db("locations").where({id});
+}
+
 module.exports = {
-    get
+    get, 
+    getById
 }
