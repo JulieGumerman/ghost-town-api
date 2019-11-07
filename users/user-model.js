@@ -9,7 +9,11 @@ async function addUser(user) {
     return findById(id)
 }
 
+const findBy = filter => {
+    return db("users").where(filter);
+}
 
 module.exports = {
-    addUser
+    addUser,
+    findBy
 }

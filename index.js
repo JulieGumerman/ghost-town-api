@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const server = express();
@@ -10,7 +12,8 @@ server.use(cors());
 server.use("/api/locations", locRoute);
 server.use("/api", userRoute);
 
-server.listen(8000, () => {
+const port = process.env.PORT;
+server.listen(port, () => {
     console.log("Yay!!!")
 })
 
