@@ -2,7 +2,24 @@
     text-align: center;
 }
 
-.mapOverview {
-    margin: 5%;
-    // margin-left: 8%;
+.map-and-legend {
+    display: flex;
+    border: 1px solid red;
+    margin: 50px;
+
+    .mapOverview {
+        margin: 2%;
+        border-radius: 50px;
+    }
+
+    .legend {
+        margin: 2%;
+        border: 1px solid black;
+        border-radius: 50px;
+        width: 50vw;
+        height: 50vh;
+        padding: 20px
+    }
 }
+
+
