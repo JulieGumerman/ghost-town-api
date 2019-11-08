@@ -11,20 +11,13 @@ import Map from './Components/map-overview/map-overview'
 
 function App() {
 
-  useEffect(() => {
-    axios
-    .get('http://localhost:8000/api/locations')
-    .then(res => {
-      console.log(res.data)
-    })
-  }, [])
 
   return (
     <div className="App">
       <Header />
       <Route exact path='/' component={Home} />
       <Route exact path='/login' component={Login}/>
-      <Route exact path='/map-overview' component={Map} />
+      <Route exact path='/map-overview' component={Map}/>
       <Footer />
     </div>
   );
