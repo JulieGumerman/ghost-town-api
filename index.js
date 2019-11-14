@@ -6,11 +6,14 @@ const server = express();
 
 const locRoute = require("./locations/locations-router.js");
 const userRoute = require("./users/user-router.js");
+const locCatRoute = require("./location-categories/loc-cat-routes");
 
 server.use(express.json());
 server.use(cors());
-server.use("/api/locations", locRoute);
 server.use("/api", userRoute);
+server.use("/api/locations", locRoute);
+server.use("/api/category", locCatRoute);
+
 
 const port = process.env.PORT;
 server.listen(port, () => {

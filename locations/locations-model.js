@@ -1,5 +1,6 @@
 const db = require("../data/dbconfig.js");
 
+/*******location info get and post requests******/
 const get = () => {
     return db("locations")
 }
@@ -12,8 +13,13 @@ const addLocation = (newPlace) => {
     return db("locations").insert(newPlace, "id");
 }
 
+/*****location-category get, post, and delete requests****/
+//  const addLocationCategory = (newCat) => {
+//      return db("location-categories").insert(newCat, "id")
+//  }
+
 module.exports = {
     get, 
     getById,
-    addLocation
+    addLocation,
 }

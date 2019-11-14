@@ -4,6 +4,7 @@
 
 * users
 * location
+* location category
 
 ### Users
 **Register a user**
@@ -13,6 +14,15 @@ Shape your user like this:
 {
     username: "",
     password: ""
+}
+```
+
+**Login a user**
+Shape your post request like this: 
+```
+{
+  username: "",
+  password: ""
 }
 ```
 
@@ -62,3 +72,9 @@ Items will automatically get an id; shape your post request like this:
   }
 ```
 direct post requests to /api/locations
+
+### Location category
+
+***get***
+***post***
+***delete***
