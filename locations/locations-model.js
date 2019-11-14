@@ -13,10 +13,6 @@ const addLocation = (newPlace) => {
     return db("locations").insert(newPlace, "id");
 }
 
-/*****location-category get, post, and delete requests****/
-//  const addLocationCategory = (newCat) => {
-//      return db("location-categories").insert(newCat, "id")
-//  }
 
 module.exports = {
     get, 

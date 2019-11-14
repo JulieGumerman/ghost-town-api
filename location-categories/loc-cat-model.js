@@ -4,6 +4,10 @@ const addLocationCategory = (newCat) => {
     return db("location-categories").insert(newCat, "id")
 }
 
+const getCategories = () => {
+    return db("location-categories");
+}
 module.exports = {
-    addLocationCategory
+    addLocationCategory,
+    getCategories
 }

@@ -77,4 +77,13 @@ direct post requests to /api/locations
 
 ***get***
 ***post***
+Post location category to "api/category" from within an individual location's information
+```
+{
+  location_id: ,
+  location_category: ""
+}
+```
+
+Location_id will be an integer, specifically the id of the location you are adding the category to.
 ***delete***
