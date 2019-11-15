@@ -2,9 +2,15 @@
 
 ### Table of Contents
 
+* base URL
 * users
 * location
 * location category
+
+### base URL
+
+This is the URL that should begin all endpoints:
+https://ghost-town-project.herokuapp.com/
 
 ### Users
 **Register a user**
