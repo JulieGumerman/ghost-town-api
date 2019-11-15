@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import {Route, Switch, withRouter} from 'react-router-dom'
-import axios from 'axios'
+import {Route, Switch} from 'react-router-dom'
 
 import Header from './Components/header/header';
 import Footer from './Components/footer/footer';
 import Home from './Components/home/home';
 import Login from './Components/login/login';
 import Map from './Components/map-overview/map-overview'
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
 
 function App() {
 
@@ -15,9 +15,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/login' component={Login}/>
-      <Route exact path='/map-overview' component={Map}/>
+      <ProtectedRoute exact path='/map-overview' component={Map}/>
+      </Switch>
       <Footer />
     </div>
   );

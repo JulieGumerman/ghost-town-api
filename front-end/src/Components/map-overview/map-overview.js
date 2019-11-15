@@ -4,10 +4,25 @@ import axios from 'axios';
 
 import marker from '../../Images/icons/locationMarker.svg';
 
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+
 import './map-overview.scss';
 
 const MapOverview = (props) => {
 	const [ locations, setLocations ] = useState([]);
+
+	useEffect(() => {
+		getLocations();
+	}, [])
+
+	const getLocations = () => {
+		axiosWithAuth()
+		.get('/locations')
+		.then(res => {
+			console.log(res)
+		})
+		.catch(err => console.log(err))
+	}
 
 	useEffect(() => {
 		const listener = (e) => {
@@ -27,10 +42,6 @@ const MapOverview = (props) => {
 			setLocations(res.data);
 		});
 	}, []);
-
-	console.log(locations);
-	var text = 15;
-	console.log(parseInt(text));
 
 	const accessToken =
 		'pk.eyJ1IjoiaXJpc2ppdG9tbzE0IiwiYSI6ImNrMnA1dGVhZzAwNzczbXFvdHUzM2VjZ3gifQ.yJH8NXyjTcEdqpgkM3xKfg';

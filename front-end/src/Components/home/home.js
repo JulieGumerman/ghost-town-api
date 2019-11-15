@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CarPic from '../../Images/Car.jpg';
 import GhostTownPic1 from '../../Images/ghostTownHome1.jpg';
 import './home.scss';
+import axios from 'axios';
 
 const Home = (props) => {
 	const credentials = {
@@ -21,15 +22,27 @@ const Home = (props) => {
 
 	const submitRegister = (e) => {
 		e.preventDefault();
-		// there should be an axios post request here
-		setRegister(credentials); 
-		// props.history.push('/home')
+		axios
+		.post('https://ghost-town-project.herokuapp.com/api/register', register)
+		.then(res => {
+			// localStorage.setItem('token', res.data.payload);
+			props.history.push('/login')
+			console.log(res)
+		})
 	};
 
 	const goToLogin = (e) => {
 		e.preventDefault();
 		props.history.push('/login');
 	};
+
+	useEffect(() => {
+		axios
+		.get('https://ghost-town-project.herokuapp.com/api/locations')
+		.then(res => {
+			console.log(res.data)
+		})
+	})
 
 	return (
 		<div className="Home">
@@ -108,8 +121,8 @@ const Home = (props) => {
 					</p>
 				</div>
 				<div className="pics1">
-					<img src={CarPic} />
-					<img src={GhostTownPic1} />
+					<img src={CarPic} alt="car-pic" />
+					<img src={GhostTownPic1} alt="ghost-town"/>
 				</div>
 			</div>
 			<div className="paragraph2">

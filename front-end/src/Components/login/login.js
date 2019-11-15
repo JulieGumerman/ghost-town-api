@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './login.scss';
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 const Login = (props) => {
 	const credentials = {
@@ -17,6 +18,17 @@ const Login = (props) => {
 		});
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		axiosWithAuth()
+		.post('/login', login)
+		.then(res => {
+			localStorage.setItem('token', res.data.payload);
+			props.history.push('/map-overview')
+			console.log(res)
+		});
+	};
+
 	return (
 		<div>
 			<form>
@@ -24,22 +36,29 @@ const Login = (props) => {
 					<div className="left">
 						<h1>Login</h1>
 
-						<input type="text" name="username" placeholder="Username" />
-						<input type="password" name="password" placeholder="Password" />
+						<input 
+						type="text" 
+						name="username" 
+						placeholder="Username" 
+						onChange={handleChange}
+						value={login.username}
+						/>
 
-						<input type="submit" name="signup_submit" value="Login" />
+						<input 
+						type="password" 
+						name="password" 
+						placeholder="Password" 
+						onChange={handleChange}
+						value={login.password} 
+						/>
+
+						<input 
+						type="submit" 
+						name="signup_submit" 
+						value="Login" 
+						onClick={handleSubmit}
+						/>
 					</div>
-
-					<div className="right">
-						<span className="loginwith">
-							Sign in with<br />social network
-						</span>
-
-						<button className="social-signin facebook">Log in with facebook</button>
-						<button className="social-signin twitter">Log in with Twitter</button>
-						<button className="social-signin google">Log in with Google+</button>
-					</div>
-					<div className="or">OR</div>
 				</div>
 			</form>
 		</div>
