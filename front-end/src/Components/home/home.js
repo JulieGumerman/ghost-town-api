@@ -22,7 +22,7 @@ const Home = (props) => {
 	const submitRegister = (e) => {
 		e.preventDefault();
 		// there should be an axios post request here
-		setRegister(credentials);
+		setRegister(credentials); 
 		// props.history.push('/home')
 	};
 
