@@ -82,6 +82,9 @@ direct post requests to /api/locations
 ### Location category
 
 ***get***
+
+You need to go to api/category; to get this to work, you will want to pass in the id of your location as a parameter. 
+
 ***post***
 Post location category to "api/category" from within an individual location's information
 ```
@@ -92,4 +95,3 @@ Post location category to "api/category" from within an individual location's in
 ```
 
 Location_id will be an integer, specifically the id of the location you are adding the category to.
-***delete***
