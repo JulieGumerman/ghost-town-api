@@ -4,10 +4,20 @@ import axios from 'axios';
 
 import marker from '../../Images/icons/locationMarker.svg';
 
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+
 import './map-overview.scss';
 
 const MapOverview = (props) => {
 	const [ locations, setLocations ] = useState([]);
+
+	useEffect(() => {
+		axiosWithAuth()
+		.get('https://ghost-town-project.herokuapp.com/api/locations')
+		.then(res => {
+			console.log(res.data)
+		})
+	})
 
 	useEffect(() => {
 		const listener = (e) => {
@@ -28,9 +38,9 @@ const MapOverview = (props) => {
 		});
 	}, []);
 
-	console.log(locations);
+	// console.log(locations);
 	var text = 15;
-	console.log(parseInt(text));
+	// console.log(parseInt(text));
 
 	const accessToken =
 		'pk.eyJ1IjoiaXJpc2ppdG9tbzE0IiwiYSI6ImNrMnA1dGVhZzAwNzczbXFvdHUzM2VjZ3gifQ.yJH8NXyjTcEdqpgkM3xKfg';
