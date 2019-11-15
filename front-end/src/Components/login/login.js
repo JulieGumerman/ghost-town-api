@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './login.scss';
-import axios from 'axios'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 const Login = (props) => {
@@ -19,12 +18,12 @@ const Login = (props) => {
 		});
 	};
 
-	const handleSubmit = (e, login) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		axiosWithAuth()
-		.post('https://ghost-town-project.herokuapp.com/api/login', login)
+		.post('/login', login)
 		.then(res => {
-			localStorage.setItem('token', res.data.token);
+			localStorage.setItem('token', res.data.payload);
 			props.history.push('/map-overview')
 			console.log(res)
 		});
@@ -32,7 +31,7 @@ const Login = (props) => {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit}>
+			<form>
 				<div id="login-box">
 					<div className="left">
 						<h1>Login</h1>

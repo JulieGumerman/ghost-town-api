@@ -26,7 +26,7 @@ const Home = (props) => {
 		.post('https://ghost-town-project.herokuapp.com/api/register', register)
 		.then(res => {
 			localStorage.setItem('token', res.data.payload);
-			props.history.push('/map-overview')
+			props.history.push('/login')
 			console.log(res)
 		})
 	};
@@ -121,8 +121,8 @@ const Home = (props) => {
 					</p>
 				</div>
 				<div className="pics1">
-					<img src={CarPic} />
-					<img src={GhostTownPic1} />
+					<img src={CarPic} alt="car-pic" />
+					<img src={GhostTownPic1} alt="ghost-town"/>
 				</div>
 			</div>
 			<div className="paragraph2">
