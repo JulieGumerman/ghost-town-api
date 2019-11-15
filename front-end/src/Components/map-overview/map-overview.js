@@ -19,10 +19,11 @@ const MapOverview = (props) => {
 		axiosWithAuth()
 		.get('/locations')
 		.then(res => {
-			console.log(res)
+			console.log("LOCATIONS ARE HERE!!!", res)
 		})
 		.catch(err => console.log(err))
 	}
+	
 
 	useEffect(() => {
 		const listener = (e) => {
