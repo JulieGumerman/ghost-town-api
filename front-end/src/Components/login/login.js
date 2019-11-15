@@ -23,7 +23,7 @@ const Login = (props) => {
 		axiosWithAuth()
 		.post('/login', login)
 		.then(res => {
-			localStorage.setItem('token', res.data.payload);
+			localStorage.setItem('token', res.data.token);
 			props.history.push('/map-overview')
 			console.log(res)
 		});
