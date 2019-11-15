@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import Header from './Components/header/header';
 import Footer from './Components/footer/footer';
@@ -15,9 +15,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/login' component={Login}/>
       <ProtectedRoute exact path='/map-overview' component={Map}/>
+      </Switch>
       <Footer />
     </div>
   );

@@ -25,7 +25,7 @@ const Home = (props) => {
 		axios
 		.post('https://ghost-town-project.herokuapp.com/api/register', register)
 		.then(res => {
-			localStorage.setItem('token', res.data.payload);
+			// localStorage.setItem('token', res.data.payload);
 			props.history.push('/login')
 			console.log(res)
 		})
