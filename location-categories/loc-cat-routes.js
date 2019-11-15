@@ -18,7 +18,7 @@ locCatRoute.post("/", (req, res) => {
 })
 
 locCatRoute.get("/", (req, res) => {
-    LocationCategories.getCategories()
+    LocationCategories.getCategories(req.body.location_id)
         .then(category => res.status(200).json(category))
         .error(err => res.status(500).json(err))
 })
