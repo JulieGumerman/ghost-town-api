@@ -27,5 +27,4 @@ locRoute.post("/", validate, (req, res) => {
         .catch(err => res.status(500).json({ message: "town cannot be added at this time"}))
 })
 
-
 module.exports = locRoute;

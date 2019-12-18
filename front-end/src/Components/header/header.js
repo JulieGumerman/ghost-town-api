@@ -7,6 +7,7 @@ const Footer = () => {
         <nav className='header'>
             <NavLink to='/'>Ghost Town Locator</NavLink>
             <NavLink to='/map-overview'>Map Overview</NavLink>
+            <NavLink to='/add-location'>Add Location</NavLink>
             <NavLink to='/register'>Login/Register</NavLink>
             </nav>
     )

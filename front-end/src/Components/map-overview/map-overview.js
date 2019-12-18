@@ -19,7 +19,8 @@ const MapOverview = (props) => {
 		axiosWithAuth()
 		.get('/locations')
 		.then(res => {
-			console.log(res)
+			console.log(res.data)
+			setLocations(res.data);
 		})
 		.catch(err => console.log(err))
 	}
@@ -35,12 +36,6 @@ const MapOverview = (props) => {
 		return () => {
 			window.removeEventListener('keydown', listener);
 		};
-	}, []);
-
-	useEffect(() => {
-		axios.get('http://localhost:8000/api/locations').then((res) => {
-			setLocations(res.data);
-		});
 	}, []);
 
 	const accessToken =
