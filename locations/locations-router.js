@@ -13,4 +13,11 @@ locRoute.get("/locations", (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+locRoute.get('/locations/:id', (req, res) => {
+    Locations.getSolo(req.params.id)
+    .then(location => {
+        res.json(location)
+    })
+})
+
 module.exports = locRoute;

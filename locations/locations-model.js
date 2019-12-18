@@ -4,6 +4,12 @@ const get = () => {
     return db("locations")
 }
 
+const getSolo = (id) => {
+    return db('locations as l')
+    .where('l.id', id)
+}
+
 module.exports = {
-    get
+    get,
+    getSolo
 }
